@@ -6,10 +6,10 @@ SCC <- readRDS("Source_Classification_Code.rds")
 # join the files
 DF <- merge(x = NEI, y = SCC, by = "SCC", all=T)
 
-# create a subset of the coal combustion-related sources
+# create a subset of Baltimore
 BALT <- subset(DF, fips=="24510")
 
-# create a subset of the vehicle sources
+# create a subset of the vehicle sources in Baltimore
 BALT_VEHICLES <- BALT[grep("Vehicles", BALT$EI.Sector), ]
 
 # create an aggregate (sum on emission) dataframe on sector and year
